@@ -1,12 +1,13 @@
+import pandas as pd
 
-import pandas
-import config
+
 import os
 print(os.environ)
+import config
 # if os.environ[]
 #     config
 # print(config.name)
-import pandas as pd
+
 # import numpy as np
 
 # import sqlalchemy
