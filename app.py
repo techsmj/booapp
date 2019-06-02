@@ -1,5 +1,14 @@
 import pandas as pd
 
+import numpy as np
+
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
+
+from flask import Flask, jsonify, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 import os
 print(os.environ)
@@ -8,15 +17,13 @@ if not os.environ["DYNO"]:
     import config
     print(config.name)
 
-# import numpy as np
 
-# import sqlalchemy
-# from sqlalchemy.ext.automap import automap_base
-# from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine
+if os.environ["JAWSDB_URL"]:
+    dburl = os.environ["JAWSDB_URL"]
+    else:
+        dbul = "sqlite://"
+   
 
-from flask import Flask, jsonify, render_template
-# from flask_sqlalchemy import SQLAlchemy
 
 
 
