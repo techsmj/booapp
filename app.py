@@ -7,18 +7,19 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import sqlalchemy.dialects.sqlite
+
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 import os
 print(os.environ)
 
-if not os.environ["DYNO"]:
+if not os.environ.get("DYNO"):
     import config
     print(config.name)
 
 
-if os.environ["JAWSDB_URL"]:
+if os.environ.get("JAWSDB_URL"):
     dburl = os.environ["JAWSDB_URL"]
 else:
     dburl = "sqlite://"
