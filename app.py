@@ -20,12 +20,12 @@ if not os.environ["DYNO"]:
 
 if os.environ["JAWSDB_URL"]:
     dburl = os.environ["JAWSDB_URL"]
-    else:
-        dbul = "sqlite://"
+else:
+    dburl = "sqlite://"
    
-
-
-
+engine = sqlalchemy.create_engine(dburl)
+df= pd.read_sql("SELECT * FROM belly_button_metadata", engine)
+print(df)
 
 app = Flask(__name__)
 
