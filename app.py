@@ -1,8 +1,11 @@
 
 import pandas
 import config
-# import os
-
+import os
+print(os.environ)
+# if os.environ[]
+#     config
+# print(config.name)
 import pandas as pd
 # import numpy as np
 
@@ -15,7 +18,7 @@ from flask import Flask, jsonify, render_template
 # from flask_sqlalchemy import SQLAlchemy
 
 
-# print(config.name)
+
 app = Flask(__name__)
 
 @app.route("/")
