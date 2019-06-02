@@ -3,10 +3,10 @@ import pandas as pd
 
 import os
 print(os.environ)
-import config
-# if os.environ[]
-#     config
-# print(config.name)
+
+if not os.environ["DYNO"]:
+    import config
+    print(config.name)
 
 # import numpy as np
 
